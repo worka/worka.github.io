@@ -1,7 +1,45 @@
-<!DOCTYPE html>
 <html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <script src="https://raw.githubusercontent.com/worka/vanilla-js-wheel-zoom/master/wheel-zoom.js"></script>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div>
+        <a href="javascript:;" id="zoom_up">Up</a>
+    </div>
+    
+    <div>
+        <a href="javascript:;" id="zoom_down">Down</a>
+    </div>
+    
+    <div style="width:600px;height:600px;overflow:auto">
+        <img src="https://placehold.it/1200x700" />
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            jcWheelZoom = JcWheelZoom.create('img', {
+                prepare: function (scale, correct_x, correct_y) {
+                    // do smth when image prepared
+                },
+                rescale: function (scale, correct_x, correct_y, min_scale) {
+                    // do smth when image rescaled
+                }
+            });
+           
+            window.addEventListener('resize', function () {
+                jcWheelZoom.prepare();
+            });
+            
+            document.getElementById('zoom_up').addEventListener('click', function () {
+                jcWheelZoom.zoomUp();
+            });
+            
+            document.getElementById('zoom_down').addEventListener('click', function () {
+                jcWheelZoom.zoomDown();
+            });
+        });
+    </script>
 </body>
 </html>
