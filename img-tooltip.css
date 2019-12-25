@@ -2,7 +2,7 @@
     position: absolute;
     z-index: 3000;
     border: 1px solid rgba(0, 0, 0, 0.25);
-    background: #FFFFFF url(example/loader.gif) no-repeat center padding-box;
+    background: #FFFFFF url(/loader.gif) no-repeat center padding-box;
     border-radius: 6px;
     box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.25);
 }
