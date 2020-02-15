@@ -3,12 +3,28 @@
     <title>worka/vanilla-js-wheel-zoom</title>
     
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    
+    <style>
+        .container {
+            width: 600px;
+            height: 600px;
+            overflow: auto;
+            background: #999;
+            position: relative;
+            cursor: move
+        }
+
+        .badge {
+            border: solid 1px blue;
+            position: absolute
+        }
+    </style>
 </head>
 <body>
-    <h1>vanilla-js-wheel-zoom</h1>
-    <h2>https://github.com/worka/vanilla-js-wheel-zoom</h2>
-    
     <div style="margin:20px;width:600px">
+        <h1>vanilla-js-wheel-zoom</h1>
+        <h4><a href="https://github.com/worka/vanilla-js-wheel-zoom">https://github.com/worka/vanilla-js-wheel-zoom</a></h2>
+        
         <div style="margin:20px 0">
             <div style="float:right">
                 <a href="javascript:;" id="zoom_up">Zoom Up</a>
@@ -19,8 +35,8 @@
             </div>
         </div>
 
-        <div style="width:600px;height:600px;overflow:auto;background:#999;position:relative;cursor: move">
-            <div class="badge" style="width:50px;height:60px;top:500px;left:600px;border:solid 1px blue;position:absolute"></div>
+        <div class="container">
+            <div class="badge" style="width:50px;height:60px;top:500px;left:600px"></div>
             
             <img src="https://placehold.it/2400x1400" />
         </div>
@@ -37,10 +53,10 @@
                     // do smth when image prepared
                     
                     if (!Object.keys(badge.dataset).length) {
-                        badge.dataset.width = parseInt(badge.style.width);
-                        badge.dataset.height = parseInt(badge.style.height);
-                        badge.dataset.left = parseInt(badge.style.left);
-                        badge.dataset.top = parseInt(badge.style.top);
+                        badge.dataset.width = badge.style.width.replace('px', '');
+                        badge.dataset.height = badge.style.height.replace('px', '');
+                        badge.dataset.left = badge.style.left.replace('px', '');
+                        badge.dataset.top = badge.style.top.replace('px', '');
                     }
                     
                     badge.style.width = (badge.dataset.width * scale) + 'px';
