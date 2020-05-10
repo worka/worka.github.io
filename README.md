@@ -1,7 +1,3 @@
-layout: page
-title: "PAGE TITLE"
-permalink: /URL-PATH/
-
 # worka.github.io
 
 <a href="https://worka.github.io/vanilla-js-url/">vanilla-js-url</a>
