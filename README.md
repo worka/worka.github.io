@@ -1,6 +1,5 @@
 ---
 title: Hello
-layout: default
 ---
 
 # worka.github.io
